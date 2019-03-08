@@ -1,0 +1,171 @@
+GIT
+
+07 March 2019
+12:20
+
+rahul.pandey@IN-IT1688 MINGW64 ~/Desktop/TestingSpace/gitdemo
+
+To initialize a repository -->
+$ git init
+Initialized empty Git repository in C:/Users/rahul.pandey/Desktop/TestingSpace/gitdemo/.git/
+
+To check the status of the repository -->
+$ git status
+
+To add a file to repository-->
+$ git add readme.txt
+
+$ git commit
+
+To see the logs -->
+$ git log
+
+To add all the files present in the directory to repository-->
+
+$ gid add .
+
+To create a file-->
+$ touch tmp.log
+
+To create a .gitignore file, whatever files you specify inside .gitignore will not be added to repository for e.g. Add *.log to it and all the log files will never be added to repository-->
+$ touch .gitignore
+
+To commit the repository with the comments-->
+$ git commit -m 'adding ignore file'
+
+To create a branch -->
+
+$ git branch mybranch
+
+To switch to a branch -->
+
+$ git checkout mybranch
+
+To switch to main branch-->
+$ git checkout master
+
+$ git merge mybranch
+
+$ git commit -a -m 'change 6'
+
+$ git checkout mybranch
+
+$ git commit -a -m 'change 7'
+
+$ git merge master
+
+$ git status
+
+To only commit the changes made in the branch-->
+$ git commit -a -m 'merging with master'
+
+To use a mergetool, this is used to remove the conflict while merging-->
+$ git mergetool
+
+To work on a unclean branch afterwords you can add this to master if you like-->
+
+$ git stash
+Saved working directory and index state WIP on mybranch: b3c680c merging with master
+
+rahul.pandey@IN-IT1688 MINGW64 ~/Desktop/TestingSpace/gitdemo (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+To see your remote repository-->
+
+$ git remote
+
+To clone a remote repository locally which is hosted at github -->
+
+$ git clone https://github.com/dustindavis/FluentGuard.git
+
+$ cd FluentGuard/
+
+$ git remote -v
+origin  https://github.com/dustindavis/FluentGuard.git (fetch)
+origin  https://github.com/dustindavis/FluentGuard.git (push)
+
+
+$ git fetch origin
+
+$ git pull origin
+Already up to date.
+
+$ git commit -a -m 'readme changes'
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+$ git push origin master
+remote: Permission to dustindavis/FluentGuard.git denied to greatonerahul.
+fatal: unable to access 'https://github.com/dustindavis/FluentGuard.git/': The requested URL returned error: 403
+
+$ git remote add MyTestRepo http://github.com/MyTestRepo.git
+
+$ git remote -v
+MyTestRepo      http://github.com/MyTestRepo.git (fetch)
+MyTestRepo      http://github.com/MyTestRepo.git (push)
+origin  https://github.com/dustindavis/FluentGuard.git (fetch)
+origin  https://github.com/dustindavis/FluentGuard.git (push)
+
+
+$ git fetch MyTestRepo
+remote: Not Found
+fatal: repository 'http://github.com/MyTestRepo.git/' not found
+
+$ git clone https://github.com/greatonerahul/MyLambaRepo.git
+Cloning into 'MyLambaRepo'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+
+To remove from  remote repository -->
+$ git remote remove MyTestRepo
+
+rahul.pandey@IN-IT1688 MINGW64 ~/Desktop/TestingSpace/gitdemo (mybranch)
+
+To add a remote repository -->
+
+$ git remote add origin https://github.com/greatonerahul/MyTestRepo.git
+
+To list your remote repository -->
+
+$ git remote -v
+origin  https://github.com/greatonerahul/MyTestRepo.git (fetch)
+origin  https://github.com/greatonerahul/MyTestRepo.git (push)
+
+
+$ git pull origin master
+From https://github.com/greatonerahul/MyTestRepo
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+To Pull from remote repository -->
+
+$ git pull origin master --allow-unrelated-histories
+From https://github.com/greatonerahul/MyTestRepo
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+To merge to remote repository -->
+
+$ git push origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (21/21), 1.80 KiB | 460.00 KiB/s, done.
+Total 21 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/greatonerahul/MyTestRepo.git
+   fe2dc51..aa9dc45  master -> master
+
+
