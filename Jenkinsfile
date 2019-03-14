@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'new_image_test'
-    }
-
-  }
+  agent none
   stages {
     stage('error') {
       steps {
