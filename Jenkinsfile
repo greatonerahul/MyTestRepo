@@ -1,12 +1,12 @@
 pipeline {
   agent {
     docker {
-      image 'NewImageTest'
+      image 'new_image_test'
     }
 
   }
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh 'echo "hello World"'
       }
